@@ -785,19 +785,33 @@ function App() {
         </p>
 
         <p>
-          Civil-Military Operations Office
-        </p>
+  Civil-Military Operations Office
+</p>
 
-        <p>
-          Lumbia Air Base, Cagayan de Oro City
-        </p>
+<p>
+  Lumbia Air Base, Cagayan de Oro City
+</p>
 
-        <a
-          href="mailto:japsbibon.work@gmail.com"
-          className="help-contact-button"
-        >
-          Contact the CMO Office
-        </a>
+<p>
+  Email:{" "}
+  <a href="mailto:cmo590abg@gmail.com">
+    cmo590abg@gmail.com
+  </a>
+</p>
+
+<p>
+  Contact:{" "}
+  <a href="tel:+63917884891">
+    0917884891
+  </a>
+</p>
+
+<a
+  href="mailto:cmo590abg@gmail.com"
+  className="help-contact-button"
+>
+  Contact the CMO Office
+</a>
 
       </div>
 
@@ -808,16 +822,18 @@ function App() {
       </main>
 
       <footer>
-        <div className="footer-content">
-          <div>
-            <strong>590th Air Base Group</strong>
-            <p>Civil-Military Operations</p>
-          </div>
+        <div>
+  <strong>590th Air Base Group</strong>
+  <p>Civil-Military Operations Office</p>
+  <p>Lumbia Air Base, Cagayan de Oro City</p>
+</div>
 
-          <p>
-            Philippine Air Force • Installation Management Command
-          </p>
-        </div>
+<div>
+  <p>Philippine Air Force • Installation Management Command</p>
+  <p>Email: cmo590abg@gmail.com</p>
+  <p>Contact: 0917884891</p>
+  <p>© 2026 590th Air Base Group. All rights reserved.</p>
+</div>
       </footer>
     </div>
   );
