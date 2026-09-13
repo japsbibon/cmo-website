@@ -5,7 +5,7 @@ import tabangImage from "./assets/tabang-katawhan.jpg";
 import samsImage from "./assets/project-sams.jpg";
 import treeImage from "./assets/tree-planting.jpg";
 import dentalImage from "./assets/dental-mission.jpg";
-import acdiLogo from "./assets/acdi.png";
+import acdiLogo from "./assets/ACDI.png";
 import afpcmcLogo from "./assets/afpfcmc.png";
 import afpslaiLogo from "./assets/afpslai.png";
 import cdoLogo from "./assets/CDO Seal.png";
