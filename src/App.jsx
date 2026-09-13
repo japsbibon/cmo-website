@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import heroImage from "./assets/CMO1.jpg";
 import tabangImage from "./assets/tabang-katawhan.jpg";
@@ -16,6 +16,82 @@ import unitLogo from "./assets/590abg.png";
 
 function App() { 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState(null);
+  useEffect(() => {
+  if (!selectedProgram) return;
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      setSelectedProgram(null);
+    }
+  };
+
+  document.body.style.overflow = "hidden";
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    document.body.style.overflow = "";
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, [selectedProgram]);
+  const programDetails = {
+  tabang: {
+    title: "Tabang Katawhan",
+    image: tabangImage,
+    category: "Community Outreach",
+    description:
+      "A recurring community outreach initiative supporting children, senior citizens, vulnerable groups, and partner institutions through meaningful engagement and practical assistance.",
+    highlights: [
+      "Community outreach and service activities",
+      "Support for partner beneficiary institutions",
+      "Recurring engagement with vulnerable sectors",
+      "Collaboration with government and private partners",
+    ],
+  },
+
+  sams: {
+    title: "Project SAMS",
+    image: samsImage,
+    category: "Youth Development",
+    description:
+      "Project SAMS uses Sports, Arts, Music, and Spiritual activities to create positive learning experiences and developmental opportunities for young beneficiaries.",
+    highlights: [
+      "Sports and fitness activities",
+      "Arts and creative engagement",
+      "Music learning and participation",
+      "Values formation and spiritual activities",
+    ],
+  },
+
+  environment: {
+    title: "Environmental Programs",
+    image: treeImage,
+    category: "Environmental Stewardship",
+    description:
+      "Environmental initiatives bring personnel, partner agencies, volunteers, and communities together through tree planting, clean-up drives, and sustainability activities.",
+    highlights: [
+      "Tree planting activities",
+      "Community clean-up drives",
+      "Environmental awareness",
+      "Partnership with environmental agencies",
+    ],
+  },
+
+  health: {
+    title: "Health & Humanitarian Service",
+    image: dentalImage,
+    category: "Health & Humanitarian Assistance",
+    description:
+      "Health and humanitarian activities provide medical, dental, bloodletting, health education, and other forms of assistance through coordinated partnerships.",
+    highlights: [
+      "Medical and dental outreach",
+      "Bloodletting activities",
+      "Health education and screening",
+      "Humanitarian assistance",
+    ],
+  },
+};
   
   return (
     <div className="app">
@@ -178,9 +254,12 @@ function App() {
             vulnerable groups, and partner institutions.
           </p>
 
-          <a href="#help" className="program-link">
-            Learn More →
-          </a>
+          <button
+  className="program-link program-button"
+  onClick={() => setSelectedProgram(programDetails.tabang)}
+>
+  Learn More →
+</button>
         </div>
       </article>
 
@@ -204,9 +283,12 @@ function App() {
             educate, and empower young beneficiaries.
           </p>
 
-          <a href="#help" className="program-link">
-            Learn More →
-          </a>
+          <button
+  className="program-link program-button"
+  onClick={() => setSelectedProgram(programDetails.sams)}
+>
+  Learn More →
+</button>
         </div>
       </article>
 
@@ -230,9 +312,12 @@ function App() {
             community-based sustainability initiatives.
           </p>
 
-          <a href="#help" className="program-link">
-            Learn More →
-          </a>
+          <button
+  className="program-link program-button"
+  onClick={() => setSelectedProgram(programDetails.environment)}
+>
+  Learn More →
+</button>
         </div>
       </article>
 
@@ -257,9 +342,12 @@ function App() {
             community partners.
           </p>
 
-          <a href="#help" className="program-link">
-            Learn More →
-          </a>
+          <button
+  className="program-link program-button"
+  onClick={() => setSelectedProgram(programDetails.health)}
+>
+  Learn More →
+</button>
         </div>
       </article>
 
@@ -839,4 +927,64 @@ function App() {
   );
 }
 
+{selectedProgram && (
+  <div
+  className="program-modal-overlay"
+  onClick={() => setSelectedProgram(null)}
+  role="presentation"
+>
+    <div
+  className="program-modal"
+  onClick={(event) => event.stopPropagation()}
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="program-modal-title"
+>
+      <button
+        className="program-modal-close"
+        onClick={() => setSelectedProgram(null)}
+        aria-label="Close program details"
+      >
+        ×
+      </button>
+
+      <div className="program-modal-image">
+        <img
+          src={selectedProgram.image}
+          alt={selectedProgram.title}
+        />
+      </div>
+
+      <div className="program-modal-content">
+        <p className="section-label">
+          {selectedProgram.category}
+        </p>
+
+        <h2 id="program-modal-title">
+  {selectedProgram.title}
+</h2>
+
+        <p className="program-modal-description">
+          {selectedProgram.description}
+        </p>
+
+        <h3>Program Highlights</h3>
+
+        <ul>
+          {selectedProgram.highlights.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+
+        <a
+          href="#help"
+          className="btn btn-primary"
+          onClick={() => setSelectedProgram(null)}
+        >
+          Partner With This Program
+        </a>
+      </div>
+    </div>
+  </div>
+)}
 export default App;
