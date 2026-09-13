@@ -17,6 +17,7 @@ import unitLogo from "./assets/590abg.png";
 function App() { 
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
+
   useEffect(() => {
   if (!selectedProgram) return;
 
@@ -923,11 +924,7 @@ function App() {
   <p>© 2026 590th Air Base Group. All rights reserved.</p>
 </div>
       </footer>
-    </div>
-  );
-}
-
-{selectedProgram && (
+      {selectedProgram && (
   <div
   className="program-modal-overlay"
   onClick={() => setSelectedProgram(null)}
@@ -987,4 +984,7 @@ function App() {
     </div>
   </div>
 )}
+    </div>
+  );
+}
 export default App;
