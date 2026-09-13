@@ -9,7 +9,7 @@ import acdiLogo from "./assets/acdi.png";
 import afpcmcLogo from "./assets/afpfcmc.png";
 import afpslaiLogo from "./assets/afpslai.png";
 import cdoLogo from "./assets/CDO Seal.png";
-import nmmcLogo from "./assets/nmmc.png";
+import nmmcLogo from "./assets/NMMC.png";
 import prcLogo from "./assets/prc.png";
 import pafcpicLogo from "./assets/pafcpic.jpg";
 import unitLogo from "./assets/590abg.png";
