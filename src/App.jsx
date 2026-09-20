@@ -13,6 +13,8 @@ import nmmcLogo from "./assets/NMMC.png";
 import prcLogo from "./assets/prc.png";
 import pafcpicLogo from "./assets/pafcpic.jpg";
 import unitLogo from "./assets/590abg.png";
+import delmonteLogo from './assets/delmonte.jpg'
+import gardeniaLogo from './assets/gardenia.png'
 
 function App() { 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -709,14 +711,28 @@ function App() {
         </div>
 
         <div className="partner-logo-card">
-          <div className="partner-logo-image">
-            <img
-              src={cdoLogo}
-              alt="City Government of Cagayan de Oro seal"
-            />
-          </div>
-          <span>City Government of Cagayan de Oro</span>
-        </div>
+  <div className="partner-logo-image">
+    <img
+      src={cdoLogo}
+      alt="City Government of Cagayan de Oro seal"
+    />
+  </div>
+  <span>City Government of Cagayan de Oro</span>
+</div>
+
+<div className="partner-logo-card">
+  <div className="partner-logo-image">
+    <img src={delmonteLogo} alt="Del Monte logo" />
+  </div>
+  <span>Del Monte</span>
+</div>
+
+<div className="partner-logo-card">
+  <div className="partner-logo-image">
+    <img src={gardeniaLogo} alt="Gardenia logo" />
+  </div>
+  <span>Gardenia</span>
+</div>
 
         <div className="partner-logo-card">
           <div className="partner-logo-image">
