@@ -699,9 +699,9 @@ function App() {
 
         <div className="partner-logo-card">
           <div className="partner-logo-image">
-            <img src={afpcmcLogo} alt="AFPCMC logo" />
+            <img src={afpcmcLogo} alt="AFPFCMC logo" />
           </div>
-          <span>AFPCMC</span>
+          <span>AFPFCMC</span>
         </div>
 
         <div className="partner-logo-card">
