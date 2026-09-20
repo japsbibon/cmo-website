@@ -16,6 +16,8 @@ import unitLogo from "./assets/590abg.png";
 import delmonteLogo from './assets/delmonte.jpg'
 import gardeniaLogo from './assets/gardenia.png'
 import clenroLogo from './assets/CLENRO_logo.jpg'
+import delmonteLogo from "./assets/delmonte-transparent.png";
+import gardeniaLogo from "./assets/gardenia-transparent.png";
 
 function App() { 
   const [menuOpen, setMenuOpen] = useState(false);
